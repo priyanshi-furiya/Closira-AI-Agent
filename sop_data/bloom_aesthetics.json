@@ -1,0 +1,104 @@
+{
+  "business": {
+    "name": "Bloom Aesthetics Clinic",
+    "tagline": "Where Beauty Blooms Naturally",
+    "hours": {
+      "weekdays": "Monday – Saturday, 9:00 AM – 7:00 PM",
+      "closed": "Sunday"
+    },
+    "location": "123 Harley Street, London, W1G 6AZ",
+    "contact": {
+      "phone": "+44 20 7123 4567",
+      "whatsapp": "+44 7700 900123",
+      "email": "hello@bloomaesthetics.co.uk",
+      "website": "www.bloomaesthetics.co.uk"
+    }
+  },
+  "services": [
+    {
+      "name": "Botox (Anti-Wrinkle Injections)",
+      "starting_price": "£200",
+      "description": "Botulinum toxin injections to reduce the appearance of fine lines and wrinkles. Treatment areas include forehead, frown lines, and crow's feet.",
+      "duration": "20–30 minutes",
+      "results": "Visible within 3–5 days, full effect in 2 weeks",
+      "longevity": "3–4 months"
+    },
+    {
+      "name": "Dermal Fillers",
+      "starting_price": "£250",
+      "description": "Hyaluronic acid-based fillers to restore volume, enhance contours, and smooth deep lines. Areas include lips, cheeks, jawline, and nasolabial folds.",
+      "duration": "30–45 minutes",
+      "results": "Immediate, with final results after 2 weeks",
+      "longevity": "6–12 months"
+    },
+    {
+      "name": "Initial Consultation",
+      "price": "Free",
+      "description": "A complimentary face-to-face or virtual consultation with one of our qualified practitioners to discuss your goals, assess suitability, and create a personalised treatment plan.",
+      "duration": "15–20 minutes",
+      "note": "No obligation to proceed with treatment"
+    }
+  ],
+  "booking": {
+    "channels": ["WhatsApp", "Website"],
+    "how_to_book": "Send us a message on WhatsApp at +44 7700 900123 or book online at www.bloomaesthetics.co.uk/book",
+    "cancellation_policy": "We require at least 24 hours' notice for cancellations. Late cancellations or no-shows may incur a fee.",
+    "deposit": "A £50 deposit is required to secure your booking, deducted from your treatment cost."
+  },
+  "escalation_rules": {
+    "triggers": [
+      "Customer makes a complaint",
+      "Customer asks a medical question",
+      "Customer attempts to negotiate pricing",
+      "More than 2 consecutive questions the AI cannot answer from the SOP"
+    ],
+    "action": "Politely inform the customer that you are connecting them with a team member who can better assist."
+  },
+  "faqs": [
+    {
+      "topic": "opening_hours",
+      "question": "What are your opening hours?",
+      "answer": "We are open Monday to Saturday, 9:00 AM to 7:00 PM. We are closed on Sundays."
+    },
+    {
+      "topic": "booking",
+      "question": "How do I book an appointment?",
+      "answer": "You can book via WhatsApp at +44 7700 900123 or through our website at www.bloomaesthetics.co.uk/book."
+    },
+    {
+      "topic": "pricing_botox",
+      "question": "How much does Botox cost?",
+      "answer": "Botox treatments start from £200. The exact cost depends on the treatment area and the amount of product required, which will be discussed during your free consultation."
+    },
+    {
+      "topic": "pricing_fillers",
+      "question": "How much do fillers cost?",
+      "answer": "Dermal filler treatments start from £250. Pricing varies based on the area treated and volume of filler used."
+    },
+    {
+      "topic": "consultation",
+      "question": "Do I need a consultation first?",
+      "answer": "We offer a free initial consultation where we assess your needs and create a personalised treatment plan. While not mandatory for all treatments, we highly recommend it."
+    },
+    {
+      "topic": "cancellation",
+      "question": "What is your cancellation policy?",
+      "answer": "We require at least 24 hours' notice for cancellations. Late cancellations or no-shows may incur a fee."
+    },
+    {
+      "topic": "safety",
+      "question": "Are the treatments safe?",
+      "answer": "All our treatments are performed by qualified and experienced practitioners. We use only FDA-approved and CE-marked products. Safety is discussed in detail during your consultation."
+    },
+    {
+      "topic": "payment",
+      "question": "What payment methods do you accept?",
+      "answer": "We accept cash, all major credit and debit cards, and bank transfers. A £50 deposit is required at the time of booking."
+    }
+  ],
+  "policies": {
+    "age_requirement": "All clients must be 18 years or older.",
+    "aftercare": "Detailed aftercare instructions are provided following every treatment.",
+    "patch_test": "A patch test may be required for certain treatments and will be discussed during consultation."
+  }
+}
