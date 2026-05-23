@@ -163,7 +163,7 @@ Customer Message
 
 ### Layer Details
 
-**Layer 1 — Model Self-Report**: The Gemini model evaluates each customer message against the 6 escalation rules in the system prompt. If it detects a trigger, it sets `escalation_needed: true` with a reason and type. This catches the majority of escalation cases including nuanced sentiment detection.
+**Layer 1 — Model Self-Report**: The Mistral model evaluates each customer message against the 6 escalation rules in the system prompt. If it detects a trigger, it sets `escalation_needed: true` with a reason and type. This catches the majority of escalation cases including nuanced sentiment detection.
 
 **Layer 2 — Confidence Threshold**: A programmatic check on the model's self-reported confidence score. Any response with `confidence < 0.6` triggers automatic escalation, even if the model didn't explicitly flag it. This guards against the model being overconfident about responses it shouldn't be giving.
 
@@ -222,7 +222,7 @@ The tone sits between two extremes:
 
 ### Why Structured JSON?
 
-We use Gemini's `response_mime_type="application/json"` to enforce structured output. This provides:
+We use Mistral's JSON mode (`response_format={"type": "json_object"}`) to enforce structured output. This provides:
 
 1. **Reliable parsing** — no regex/string extraction needed
 2. **Metadata alongside responses** — confidence, intent, and escalation flags in one call
@@ -231,7 +231,7 @@ We use Gemini's `response_mime_type="application/json"` to enforce structured ou
 
 ### Why Not Function Calling?
 
-Gemini supports function calling, but structured JSON is simpler for this use case:
+Mistral supports function calling, but structured JSON is simpler for this use case:
 - We don't need the model to invoke external tools
 - We just need structured metadata alongside the response
 - JSON mode has lower latency than function calling
@@ -254,7 +254,7 @@ We chose **strict grounding** — the model refuses to answer anything outside t
 
 ### Single API Call vs. Multi-Call Pipeline
 
-We process each message with a **single Gemini API call** that returns both the response and metadata. An alternative would be separate calls for (1) response generation, (2) escalation detection, (3) sentiment analysis. We chose single-call because:
+We process each message with a **single Mistral API call** that returns both the response and metadata. An alternative would be separate calls for (1) response generation, (2) escalation detection, (3) sentiment analysis. We chose single-call because:
 - Lower latency (one round-trip vs. three)
 - Lower cost (fewer tokens consumed)
 - The model is capable of multi-task output in a single call
