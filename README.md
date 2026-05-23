@@ -37,7 +37,7 @@ The agent is implemented as a **state machine** orchestrated by `ClosiraAgent`:
 
 ### Prerequisites
 - **Python 3.10+** (uses `match/case` syntax and `X | Y` type unions)
-- **Gemini API key** from [Google AI Studio](https://aistudio.google.com/)
+- **Mistral AI API key** from [Mistral AI Console](https://console.mistral.ai/)
 
 ### Installation
 
@@ -51,15 +51,15 @@ pip install -r requirements.txt
 
 # Set up environment variables
 cp .env.example .env
-# Edit .env and add your GEMINI_API_KEY
+# Edit .env and add your MISTRAL_API_KEY
 ```
 
 ### Environment Variables
 
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
-| `GEMINI_API_KEY` | ✅ | — | Your Google Gemini API key |
-| `MODEL_NAME` | ❌ | `gemini-2.0-flash` | Gemini model to use |
+| `MISTRAL_API_KEY` | ✅ | — | Your Mistral AI API key |
+| `MODEL_NAME` | ❌ | `mistral-large-latest` | Mistral AI model to use |
 
 ## How to Run
 
@@ -121,7 +121,7 @@ AI Agent/
 
 | Package | Version | Purpose |
 |---------|---------|---------|
-| `google-generativeai` | ≥0.8.0 | Google Gemini API SDK |
+| `mistralai` | ≥1.0.0 | Mistral AI API SDK |
 | `rich` | ≥13.0.0 | Terminal UI with colours, panels, and markdown |
 | `python-dotenv` | ≥1.0.0 | Environment variable loading from `.env` |
 
@@ -139,7 +139,7 @@ The SOP is loaded at startup and injected into the system prompt. The AI is stri
 
 ## Trade-offs & Known Limitations
 
-1. **Free-tier rate limits**: The Gemini free tier has request-per-minute limits. For rapid-fire testing, you may hit 429 errors. The agent handles these gracefully with fallback responses.
+1. **Free-tier rate limits**: The Mistral API free tier has request-per-minute limits. For rapid-fire testing, you may hit 429 errors. The agent handles these gracefully with fallback responses.
 
 2. **Single SOP file**: The current design loads one SOP file. For multi-business support, the `sop_loader` would need to be extended.
 
